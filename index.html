@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+	Moderator Sheet
+</title>
+<style>
+  @font-face { font-family: Ilisarniq-Bold; src: url('Ilisarniq-Bold.otf'); } 
+  header{
+    background-color: #eca1a6;
+  }
+  form{
+    background-color: #d6cbd3;
+  }
+  input, h1, b, em{
+    color: #3e4444;
+    margin-left: 3%;
+    font-size: small;
+    font-family: Ilisarniq-Bold;
+  }
+  button{
+    margin-left: 3%;
+  }
+  em{
+    text-align: justify-all;
+    font-size: x-small;
+    font-family: Palatino;
+  }
+  h1{
+    font-size: x-large;
+    color: white;
+  }
+  p{
+    color: #3e4444;
+    margin-left: 3%;
+    font-size: small;
+    font-family: Ilisarniq-Bold;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <br><br>
+	<h1>APPE Intercollegiate Ethics Bowl Championship Moderator’s Score Sheet</h1>
+  <br>
+<br>
+</header>
+	<form
+  action="****************"
+  method="****"
+  >
+    <br>
+  <label for="Moderator"><b>Moderator Name</b></label><br>
+  <input type="text" id="Moderator" name="Moderator"><br><br>
+  <label for="Round"><b>Round</b></label><br>
+  <input type="number" id="Round" name="Round"><br><br>
+  <label for="Team One"><b>Team One</b></label><br>
+  <input type="text" id="Team One" name="Team One"><br><br>
+  <label for="Team Two"><b>Team Two</b></label><br>
+  <input type="text" id="Team Two" name="Team Two"><br><br>
+   <label for="Judge One Team One Score (12-60)"><b>Judge One Team One Score (12-60)</b></label><br>
+   <input type="number" id="Judge One Team One Score (12-60)" name="Judge One Team One Score (12-60)" min="12" max="60"><br><br>
+    <label for="Judge One Team Two Score (12-60)"><b>Judge One Team Two Score (12-60)</b></label><br>
+   <input type="number" id="Judge One Team Two Score (12-60)" name="Judge One Team Two Score (12-60)" min="12" max="60"><br><br>
+    <label for="Judge Two Team One Score (12-60)"><b>Judge Two Team One Score (12-60)</b></label><br>
+
+   <input type="number" id="Judge Two Team One Score (12-60)" name="Judge Two Team One Score (12-60)" min="12" max="60"><br><br>
+<label for="Judge Two Team Two Score (12-60)"><b>Judge Two Team Two Score (12-60)</b></label><br>
+   <input type="number" id="Judge Two Team Two Score (12-60)" name="Judge Two Team Two Score (12-60)" min="12" max="60"><br><br>
+
+
+    <label for="Judge Three Team One Score (12-60)"><b>Judge Three Team One Score (12-60)</b></label><br>
+   <input type="number" id="Judge Three Team One Score (12-60)" name="Judge Three Team One Score (12-60)" min="12" max="60"><br><br>
+  
+    
+    <label for="Judge Three Team Two Score (12-60)"><b>Judge Three Team Two Score (12-60)</b></label><br>
+   <input type="number" id="Judge Three Team Two Score (12-60)" name="Judge Three Team Two Score (12-60)" min="12" max="60"><br>
+   
+
+   <br>
+   <button type="button" onclick="winner()">Click here to display and submit the next four results!</button>
+   <br>
+   <p>Winner</p>
+   <input type="text" id="Winner" name="Winner"><br>
+   <p>Number of Judges Voting for the Winner</p>
+   <input type="number" id="Points of Winning Team" name="Points of Winning Team" min="0" max="3"><br>
+   <p>Total Point Differential Team One</p>
+   <input type="number" id="Differential Team One" name="Differential Team One" min="-3" max="3"><br>
+   <p>Total Point Differential Team Two</p>
+   <input type="number" id="Differential Team Two" name="Differential Team Two" min="-3" max="3"><br>
+   <br>
+
+
+   <script>
+    function winner()
+    {
+      var judge1team1a = 0;
+      var judge1team2a = 0;
+      var judge1team1b = 0;
+      var judge1team2b = 0;
+      var judge2team1a = 0;
+      var judge2team2a = 0;
+      var judge2team1b = 0;
+      var judge2team2b = 0;
+      var judge3team1a = 0;
+      var judge3team2a = 0;
+      var judge3team1b = 0;
+      var judge3team2b = 0;
+      var judge1team1c = 0;
+      var judge1team2c = 0;
+      var judge2team1c = 0;
+      var judge2team2c = 0;
+      var judge3team1c = 0;
+      var judge3team2c = 0;
+
+      if ((document.getElementById("Judge One Team One Score (12-60)").value) > (document.getElementById("Judge One Team Two Score (12-60)").value))
+      {
+        judge1team1a = 1;
+        judge1team2a = 0;
+      }
+      else if ((document.getElementById("Judge One Team One Score (12-60)").value) < (document.getElementById("Judge One Team Two Score (12-60)").value))
+      {
+         judge1team1b = 0;
+         judge1team2b = 1;
+      }
+      else 
+      {
+         judge1team1c = 0.5;
+         judge1team2c = 0.5;
+      }
+      if ((document.getElementById("Judge Two Team One Score (12-60)").value) > (document.getElementById("Judge Two Team Two Score (12-60)").value))
+      {
+        judge2team1a = 1;
+        judge2team2a = 0;
+      } 
+      else if ((document.getElementById("Judge Two Team One Score (12-60)").value) < (document.getElementById("Judge Two Team Two Score (12-60)").value))
+      {
+        judge2team1b = 0;
+        judge2team2b = 1;
+      } 
+      else
+      {
+        judge2team1c = 0.5;
+        judge2team2c = 0.5;
+      }
+      if ((document.getElementById("Judge Three Team One Score (12-60)").value) > (document.getElementById("Judge Three Team Two Score (12-60)").value))
+      {
+        judge3team1a = 1;
+        judge3team2a = 0;
+      }
+      else if ((document.getElementById("Judge Three Team One Score (12-60)").value) < (document.getElementById("Judge Three Team Two Score (12-60)").value))
+      {
+        judge3team1b = 0;
+        judge3team2b = 1;
+      }
+      else
+      {
+        judge3team1c = 0.5;
+        judge3team2c = 0.5;
+      }
+
+      var teamonepoints = Number(judge1team1a) + Number(judge1team1b) + Number(judge2team1a) + Number(judge2team1b) + Number(judge3team1a) + Number(judge3team1b) + Number(judge1team1c) + Number(judge2team1c) + Number(judge3team1c);
+      var teamtwopoints = Number(judge1team2a) + Number(judge1team2b) + Number(judge2team2a) + Number(judge2team2b) + Number(judge3team2a) + Number(judge3team2b) + Number(judge1team2c) + Number(judge2team2c) + Number(judge3team2c);
+
+      if (teamonepoints > teamtwopoints)
+      {
+        document.getElementById("Winner").value = "Team One";
+      }
+      else if (teamtwopoints > teamonepoints)
+      {
+        document.getElementById("Winner").value = "Team Two";
+      }
+      else
+      {
+        document.getElementById("Winner").value = "Tie";
+      }
+
+      if (document.getElementById("Winner").value == "Team One")
+      {
+        document.getElementById("Points of Winning Team").value = teamonepoints;
+      }
+      else if (document.getElementById("Winner").value == "Team Two")
+      {
+        document.getElementById("Points of Winning Team").value = teamtwopoints;
+      } 
+      else
+      {
+        document.getElementById("Points of Winning Team").value = teamonepoints;
+      }
+
+      document.getElementById("Differential Team One").value = teamonepoints - teamtwopoints;
+      document.getElementById("Differential Team Two").value = teamtwopoints - teamonepoints;
+    }
+
+   </script>
+<button type="submit">Submit the entire Form!</button>
+<br>
+<br>
+<br>
+</form>
+</body>
+</html>
